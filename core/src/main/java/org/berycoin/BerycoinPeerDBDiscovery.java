@@ -31,7 +31,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * A version of PeerDBDiscovery that only returns nodes which support Bloom filters according to Berycoin's BLOOM bit
  */
-public class LitcoinPeerDBDiscovery extends PeerDBDiscovery {
+public class BerycoinPeerDBDiscovery extends PeerDBDiscovery {
     // Ugly hack to only let the PeerDB know about peers with NODE_BLOOM (1<<1)
     // Wrap the connected event listener and intercept calls to it
     private static class WrappedEventListener extends AbstractPeerEventListener {
@@ -83,7 +83,7 @@ public class LitcoinPeerDBDiscovery extends PeerDBDiscovery {
         }
     }
 
-    public LitcoinPeerDBDiscovery(NetworkParameters params, File db, PeerGroup group) {
+    public BerycoinPeerDBDiscovery(NetworkParameters params, File db, PeerGroup group) {
         super(params, db, new PeerGroupWrapper(params, group));
     }
 }

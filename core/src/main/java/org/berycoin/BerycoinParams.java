@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.litecoin;
+package org.berycoin;
 
 import com.google.bitcoin.core.*;
 import com.google.bitcoin.script.Script;
@@ -32,10 +32,10 @@ import static com.google.common.base.Preconditions.checkState;
  * Parameters for the testnet, a separate public instance of Bitcoin that has relaxed rules suitable for development
  * and testing of applications and new Bitcoin versions.
  */
-public class LitecoinParams extends NetworkParameters {
-    public LitecoinParams() {
+public class BerycoinParams extends NetworkParameters {
+    public BerycoinParams() {
         super();
-        id = "org.litecoin.production";
+        id = "org.berycoin.production";
         proofOfWorkLimit = Utils.decodeCompactBits(0x1e0fffffL);
         addressHeader = 48;
         acceptableAddressCodes = new int[] { 48 };
@@ -75,8 +75,8 @@ public class LitecoinParams extends NetworkParameters {
         subsidyDecreaseBlockCount = 840000;
 
         dnsSeeds = new String[] {
-                "dnsseed.litecointools.com",
-                "dnsseed.litecoinpool.org",
+                "dnsseed.berycointools.com",
+                "dnsseed.berycoinpool.org",
                 "dnsseed.ltc.xurious.com",
                 "dnsseed.koin-project.com",
                 "dnsseed.weminemnc.com"
@@ -87,10 +87,10 @@ public class LitecoinParams extends NetworkParameters {
     @Override
     public BigInteger getMaxMoney() { return MAX_MONEY; }
 
-    private static LitecoinParams instance;
-    public static synchronized LitecoinParams get() {
+    private static BerycoinParams instance;
+    public static synchronized BerycoinParams get() {
         if (instance == null) {
-            instance = new LitecoinParams();
+            instance = new BerycoinParams();
         }
         return instance;
     }
@@ -107,7 +107,7 @@ public class LitecoinParams extends NetworkParameters {
         }
     }
 
-    @Override public String getURIScheme() { return "litecoin:"; }
+    @Override public String getURIScheme() { return "berycoin:"; }
 
     /** Gets the hash of the given block for the purpose of checking its PoW */
     public Sha256Hash calculateBlockPoWHash(Block b) {

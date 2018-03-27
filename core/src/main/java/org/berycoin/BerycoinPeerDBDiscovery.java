@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.litecoin;
+package org.berycoin;
 
 import com.google.bitcoin.core.*;
 import com.google.bitcoin.net.discovery.PeerDBDiscovery;
@@ -29,7 +29,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 
 /**
- * A version of PeerDBDiscovery that only returns nodes which support Bloom filters according to Litecoin's BLOOM bit
+ * A version of PeerDBDiscovery that only returns nodes which support Bloom filters according to Berycoin's BLOOM bit
  */
 public class LitcoinPeerDBDiscovery extends PeerDBDiscovery {
     // Ugly hack to only let the PeerDB know about peers with NODE_BLOOM (1<<1)

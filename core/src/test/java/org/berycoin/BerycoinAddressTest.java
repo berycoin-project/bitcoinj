@@ -32,7 +32,7 @@ public class BerycoinAddressTest {
     @Test
     public void stringification() throws Exception {
         Address b = new Address(mainParams, Hex.decode("4a22c3c4cbb31e4d03b15550636762bda0baf85a"));
-        assertEquals("LRywuuNCDLJCX4cnQ8RxQQoLbtM5FRsgto", b.toString());
+        assertEquals("BBD5GQWZtBe3i6QnqUmdFXYF8HRNsow6G1", b.toString());
     }
     
     @Test

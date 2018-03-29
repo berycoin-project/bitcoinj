@@ -38,7 +38,7 @@ public class BerycoinAddressTest {
     @Test
     public void decoding() throws Exception {
         Address b = new Address(mainParams, "B6WsQXXETJxx3BfSvwfmF6M38PXqif2eBT");
-        assertEquals("221ca965650a603b911b930fb9fb4b9b475c40b0", Utils.bytesToHexString(b.getHash160()));
+        assertEquals("16a7b90fdc853ccb16a24702eda45cffb7d71f61", Utils.bytesToHexString(b.getHash160()));
     }
 
     @Test

@@ -37,18 +37,18 @@ public class BerycoinParams extends NetworkParameters {
         super();
         id = "org.berycoin.production";
         proofOfWorkLimit = Utils.decodeCompactBits(0x1e0fffffL);
-        addressHeader = 48;
-        acceptableAddressCodes = new int[] { 48 };
-        port = 9333;
-        packetMagic = 0xfbc0b6dbL;
+        addressHeader = 25;
+        acceptableAddressCodes = new int[] { 25 };
+        port = 9947;
+        packetMagic = 0xac3ed3fdL;
         dumpedPrivateKeyHeader = 128 + addressHeader;
 
-        targetTimespan = (int)(3.5 * 24 * 60 * 60);
-        interval = targetTimespan/((int)(2.5 * 60));
+        targetTimespan = (int)(1.5 * 24 * 60 * 60);
+        interval = targetTimespan/((int)(1 * 60));
 
-        genesisBlock.setDifficultyTarget(0x1e0ffff0L);
-        genesisBlock.setTime(1317972665L);
-        genesisBlock.setNonce(2084524493L);
+        genesisBlock.setDifficultyTarget(0x1e0ffd00L);
+        genesisBlock.setTime(1518374156L);
+        genesisBlock.setNonce(722266L);
         genesisBlock.removeTransaction(0);
         Transaction t = new Transaction(this);
         try {
@@ -60,7 +60,7 @@ public class BerycoinParams extends NetworkParameters {
             t.addInput(new TransactionInput(this, t, bytes));
             ByteArrayOutputStream scriptPubKeyBytes = new ByteArrayOutputStream();
             Script.writeBytes(scriptPubKeyBytes, Hex.decode
-                    ("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9"));
+                    ("0482fae82061c1400ca141ccb3831ee91bbb054495b75bd13a44c83e6bdff949eb69c76cce3d8957328cec83513f3a1f40d15b4f8a0dcbdd14555bdd3fe45649b4"));
             scriptPubKeyBytes.write(ScriptOpCodes.OP_CHECKSIG);
             t.addOutput(new TransactionOutput(this, t, Utils.toNanoCoins(50, 0), scriptPubKeyBytes.toByteArray()));
         } catch (Exception e) {
@@ -69,21 +69,20 @@ public class BerycoinParams extends NetworkParameters {
         }
         genesisBlock.addTransaction(t);
         String genesisHash = genesisBlock.getHashAsString();
-        checkState(genesisHash.equals("12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2"),
+        checkState(genesisHash.equals("62d4ee455f9850e354f5c85d42fba5852581877e032826dc07c0eb21545fff66"),
                 genesisBlock);
 
-        subsidyDecreaseBlockCount = 840000;
+        subsidyDecreaseBlockCount = 160000000;
 
         dnsSeeds = new String[] {
-                "dnsseed.berycointools.com",
-                "dnsseed.berycoinpool.org",
-                "dnsseed.ltc.xurious.com",
-                "dnsseed.koin-project.com",
-                "dnsseed.weminemnc.com"
+                "dnsseed.berycoin.com",
+                "dnsseed.berycoin.org",
+                "bago.resteemexposure.com",
+                "bilal.myfxstore.com"
         };
     }
 
-    private static BigInteger MAX_MONEY = Utils.COIN.multiply(BigInteger.valueOf(84000000));
+    private static BigInteger MAX_MONEY = Utils.COIN.multiply(BigInteger.valueOf(50000000000));
     @Override
     public BigInteger getMaxMoney() { return MAX_MONEY; }
 

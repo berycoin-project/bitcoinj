@@ -82,7 +82,7 @@ public class BerycoinParams extends NetworkParameters {
         };
     }
 
-    private static BigInteger MAX_MONEY = Utils.COIN.multiply(BigInteger.valueOf(50000000000));
+    private static BigInteger MAX_MONEY = Utils.COIN.multiply(BigInteger.valueOf(50000000000L));
     @Override
     public BigInteger getMaxMoney() { return MAX_MONEY; }
 

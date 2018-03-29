@@ -37,7 +37,7 @@ public class BerycoinAddressTest {
     
     @Test
     public void decoding() throws Exception {
-        Address b = new Address(mainParams, "LNLKaBheR1M5HACRu8gmjXxCjkPPVHxGW5");
+        Address b = new Address(mainParams, "B6WsQXXETJxx3BfSvwfmF6M38PXqif2eBT");
         assertEquals("221ca965650a603b911b930fb9fb4b9b475c40b0", Utils.bytesToHexString(b.getHash160()));
     }
 
@@ -45,7 +45,7 @@ public class BerycoinAddressTest {
     public void errorPaths() {
         // Check the case of a mismatched network.
         try {
-            new Address(TestNet3Params.get(), "LRywuuNCDLJCX4cnQ8RxQQoLbtM5FRsgto");
+            new Address(TestNet3Params.get(), "B8NXarUCK6aEMSErqCeVDXmCGsj7yzp9ZP");
             fail();
         } catch (WrongNetworkException e) {
             // Success.

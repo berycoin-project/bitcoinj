@@ -56,7 +56,7 @@ public class BerycoinParams extends NetworkParameters {
             //
             //   "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks"
             byte[] bytes = Hex.decode
-                    ("04ffff001d0104404e592054696d65732030352f4f63742f32303131205374657665204a6f62732c204170706c65e280997320566973696f6e6172792c2044696573206174203536");
+                    ("04ffff001d0104475472756d70e280997320746f7567682074616c6b206d61792068656c702050616b697374616e206b65657020746f702074616c656e7420466562727561727920352c2032303138");
             t.addInput(new TransactionInput(this, t, bytes));
             ByteArrayOutputStream scriptPubKeyBytes = new ByteArrayOutputStream();
             Script.writeBytes(scriptPubKeyBytes, Hex.decode

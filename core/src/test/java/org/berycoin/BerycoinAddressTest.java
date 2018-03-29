@@ -58,7 +58,7 @@ public class BerycoinAddressTest {
 
     @Test
     public void getNetwork() throws Exception {
-        NetworkParameters params = Address.getParametersFromAddress("LNLKaBheR1M5HACRu8gmjXxCjkPPVHxGW5");
+        NetworkParameters params = Address.getParametersFromAddress("B6av69UATqSrLKp78EPnipZgALWVPzYFyh");
         assertEquals(BerycoinParams.get().getId(), params.getId());
     }
 }
